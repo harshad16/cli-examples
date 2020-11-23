@@ -1,0 +1,16 @@
+check:
+  - thoth-build
+  - thoth-advise
+build:
+  base-image: "quay.io/thoth-station/s2i-thoth-ubi8-py36:latest"
+  build-stratergy: "Source"
+  registry: "quay.io"
+  registry-org: "harshad16"
+  registry-project: "cli-examples"
+  registry-secret: "thoth-station-thoth-pusher-secret"
+deploy:
+  project-org: "harshad16"
+  project-name: "thoth-application"
+  deployment-application: "tf-job"
+  image-name: "cli-examples"
+  overlay-contextpath: "cli-examples/overlays/test/imagestreamtag.yaml"
